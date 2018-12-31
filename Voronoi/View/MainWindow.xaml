@@ -1,0 +1,60 @@
+﻿<Window x:Class="VoronoiApp.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:VoronoiApp.View"
+        Background="#121212"
+        Title="Voroni"
+        FontFamily="Consolas"
+        WindowStartupLocation="CenterScreen"
+        Width="1800"
+        Height="1200">
+    <DockPanel LastChildFill="True">
+        <Grid Background="#1B1B1B">
+            <Border Margin="220 0 0 0"
+                    ClipToBounds="True"
+                    Background="#111"
+                    DockPanel.Dock="Bottom" >
+                <local:VoronoiVisual x:Name="VoronoiVisual" SnapsToDevicePixels="False"/>
+            </Border>
+            <TextBlock x:Name="StatusText"
+                       Margin="20 15 0 0" 
+                       FontSize="13"
+                       Text="[Placeholder]"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Foreground="White"/>
+            <TextBlock
+                Margin="20 0 0 0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Width="190"
+                Foreground="White">
+                [ C ]  Clear points <LineBreak/>
+                <LineBreak/>
+                [ ▲ ]  Add 1 point <LineBreak/>
+                [ ▼ ]  Remove 1 point <LineBreak/>
+                <LineBreak/>
+                [ W ]  Add 25 points <LineBreak/>
+                [ S ]  Remove 25 points <LineBreak/>
+                <LineBreak/>
+                [ Q ]  Slow down <LineBreak/>
+                [ A ]  Speed up <LineBreak/>
+                <LineBreak/>
+                [ P ]  Toggle Points <LineBreak/>
+                [ D ]  Toggle Delaunay <LineBreak/>
+                [ V ]  Toggle Voronoi <LineBreak/>
+                [ H ]  Toggle Diagnostics <LineBreak/>
+                <LineBreak/>
+                [ N ]  Incremental Delaunay <LineBreak/>
+                [ M ]  Sweep-Circle Delaunay <LineBreak/>
+                <LineBreak/>
+                [ 1 ]  Preset 1 - Random <LineBreak/>
+                [ 2 ]  Preset 2 - Square <LineBreak/>
+                [ 3 ]  Preset 3 - Circle <LineBreak/>
+                [ 4 ]  Preset 4 - Grid <LineBreak/>
+                [ 5 ]  Preset 5 - Star <LineBreak/>
+                [ 6 ]  Preset 6 - Special <LineBreak/>
+            </TextBlock>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,68 @@
+﻿
+        // Source: https://stackoverflow.com/a/44875841
+
+        /// <summary>
+        /// Equals 0           if a, b and c are alined.
+        /// Greater than 0     if ccw.
+        /// Smaller than 0     if cw.
+        /// </summary>
+        private double ccw(Point a, Point b, Point c)
+        {
+            return (b.X - a.X) * (c.Y - a.Y) - (c.X - a.X) * (b.Y - a.Y);
+        }
+
+        public bool IsPointInCircumcircle(Point p)
+        {
+            //var a = A;
+            //var b = B;
+            //var c = C;
+
+            //var sign = ccw(a, b, c);
+            //if (sign > 0)
+            //{
+            //    // Change to clockwise from counter-clockwise
+            //    var t = c;
+            //    c = b;
+            //    b = t;
+            //}
+
+            //var ax_ = a.X - p.X;
+            //var ay_ = a.Y - p.Y;
+            //var bx_ = b.X - p.X;
+            //var by_ = b.Y - p.Y;
+            //var cx_ = c.X - p.X;
+            //var cy_ = c.Y - p.Y;
+
+            ///*
+            //    ax_, ay_, ax_² + ay_²
+            //    bx_, by_, bx_² + by_²
+            //    cx_, cy_, cx_² + cy_²
+            //*/
+            //return (
+            //    (ax_ * ax_ + ay_ * ay_) * (bx_ * cy_ - cx_ * by_) -
+            //    (bx_ * bx_ + by_ * by_) * (ax_ * cy_ - cx_ * ay_) +
+            //    (cx_ * cx_ + cy_ * cy_) * (ax_ * by_ - bx_ * ay_)
+            //) < 0;
+        }
+
+
+        /// <summary>
+        /// Converts a cartesian point with predefined origin
+        /// into polar coordinate system by calculting the angle and the squared radius
+        /// of the point in polar coordinate system.
+        /// The angle is calculated in clockwise-direction.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static (double radius2, double angle) ConvertCartesianToPolar(Point cartesianPoint, Point origin)
+        {
+            var dx = cartesianPoint.X - origin.X;
+            var dy = cartesianPoint.Y - origin.Y;
+
+            var angle = Math.Atan2(dy, dx);
+            if (angle < 0)
+                angle = Math.PI * 2 + angle;
+
+            var radius = dx * dx + dy * dy;
+
+            return (radius, Math.PI * 2 - angle); // Angle increases in clockwise direction
+        }
