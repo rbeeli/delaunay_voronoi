@@ -202,7 +202,7 @@ namespace VoronoiApp.View
 
         private Voronoi ComputeVoronoi(out double delaunayElapsedMs, out double voronoiElapsedMs)
         {
-            // Compute delaunay & voroni
+            // Compute Delaunay & Voronoi
             Voronoi voronoi = null;
 
             if (_delaunayMethod == 0)

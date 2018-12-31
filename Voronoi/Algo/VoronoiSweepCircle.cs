@@ -42,7 +42,7 @@ namespace VoronoiApp.Algo
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="points">Point set to build voroni/delaunay from.</param>
+        /// <param name="points">Point set to build Voronoi/Delaunay from.</param>
         /// <param name="buildDiagnostics">Indcates if diagnostics shapes/geometry for debugging is built.</param>
         public VoronoiSweepCircle(Point[] points, bool buildDiagnostics = false)
             : base(points, buildDiagnostics)

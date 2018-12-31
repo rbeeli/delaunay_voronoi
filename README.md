@@ -4,4 +4,10 @@ Implementation of naive and Sweep-Circle Delaunay triangulation, combined with V
 
 ## Screenshots
 
-![Example tesslation results (Delaunay and Voronoi tessalation)](./visualization.png)
+![Screenshot 1](./screenshots/1.png)
+
+![Screenshot 2](./screenshots/2.png)
+
+![Screenshot 3](./screenshots/3.png)
+
+![Screenshot 4](./screenshots/4.png)
